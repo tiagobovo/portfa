@@ -16,7 +16,7 @@ export const siteConfig = {
     image: null as string | null,
   },
   role: "Art Director",
-  url: "https://www.seudominio.com",
+  url: "https://portfa-theta.vercel.app",
   location: "São Paulo, Brasil",
   locale: "pt_BR",
   lang: "pt-BR",
