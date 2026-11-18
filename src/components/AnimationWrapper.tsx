@@ -90,6 +90,25 @@ export function RevealText({ lines, className, lineClassName, delay = 0, onView 
   );
 }
 
+/**
+ * Revelação de card: o quadro "abre" de baixo para cima com leve escala.
+ * Use `delay` para escalonar cards lado a lado.
+ */
+export function RevealCard({ children, className, delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
+  const reduce = useReducedMotion();
+  return (
+    <motion.div
+      className={className}
+      initial={reduce ? { opacity: 0 } : { opacity: 0, y: 60, scale: 0.94, clipPath: "inset(30% 0% 0% 0% round 0px)" }}
+      whileInView={{ opacity: 1, y: 0, scale: 1, clipPath: "inset(0% 0% 0% 0% round 0px)" }}
+      viewport={{ once: true, margin: "0px 0px -12% 0px" }}
+      transition={{ duration: 1, ease: EASE, delay }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 /** Revelação de imagem: a máscara recua e a imagem desacelera o zoom. */
 export function RevealImage({ children, className, delay = 0, onView = true }: { children: ReactNode; className?: string; delay?: number; onView?: boolean }) {
   const reduce = useReducedMotion();
