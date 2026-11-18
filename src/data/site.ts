@@ -67,6 +67,21 @@ export const siteConfig = {
       "Campanhas, ações e conteúdos para marcas como Claro, Harley-Davidson, TIM, Citroën, Hyundai e Unilever.",
   },
 
+  /**
+   * PROJETOS PESSOAIS — perfis do Instagram exibidos como cartazes lambe-lambe,
+   * cada um com o feed do perfil logo abaixo.
+   * `handle` é o @ sem a arroba. Deixe vazio enquanto o perfil não existir.
+   */
+  personalProjects: {
+    eyebrow: "Projetos pessoais",
+    title: "Fora do briefing.",
+    intro: "Dois perfis autorais no Instagram. Passa lá, sobe lá.",
+    items: [
+      { id: "passa-la", poster: ["Passa", "Lá"], handle: "", tone: "accent" },
+      { id: "sobe-la", poster: ["Sobe", "Lá"], handle: "sobe.l4", tone: "ink" },
+    ] as { id: string; poster: [string, string]; handle: string; tone: "accent" | "ink" }[],
+  },
+
   about: {
     eyebrow: "Sobre",
     title: "Diretor de arte com passagens por W/Brasil, Leo Burnett, ID/TBWA e Borghi/Lowe.",

@@ -1,4 +1,4 @@
-import { Inter_Tight, Instrument_Serif } from "next/font/google";
+import { Anton, Inter_Tight, Instrument_Serif } from "next/font/google";
 
 /**
  * TIPOGRAFIA
@@ -11,6 +11,14 @@ import { Inter_Tight, Instrument_Serif } from "next/font/google";
 export const sans = Inter_Tight({
   subsets: ["latin"],
   variable: "--font-sans-family",
+  display: "swap",
+});
+
+/** `display` → tipografia de cartaz (lambe-lambe) dos projetos pessoais. */
+export const display = Anton({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-display-family",
   display: "swap",
 });
 

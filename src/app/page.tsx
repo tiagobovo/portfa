@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import ProjectGrid from "@/components/ProjectGrid";
+import PersonalProjects from "@/components/PersonalProjects";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import { ScrollToHash } from "@/components/HashLink";
@@ -23,6 +24,7 @@ export default function HomePage() {
       <ScrollToHash />
       <Hero />
       <ProjectGrid />
+      <PersonalProjects />
       <About />
       <Contact />
     </>

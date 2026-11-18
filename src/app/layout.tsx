@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type { CSSProperties } from "react";
 import "./globals.css";
-import { sans, serif } from "./fonts";
+import { display, sans, serif } from "./fonts";
 import { siteConfig } from "@/data/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -50,7 +50,7 @@ const themeVars = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang={siteConfig.lang} className={`${sans.variable} ${serif.variable}`} style={themeVars}>
+    <html lang={siteConfig.lang} className={`${sans.variable} ${serif.variable} ${display.variable}`} style={themeVars}>
       <body className="bg-background text-foreground font-sans antialiased">
         <a
           href="#main"
