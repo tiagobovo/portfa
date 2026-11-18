@@ -47,26 +47,31 @@ export default function Hero() {
           </div>
         </Reveal>
 
-        {/* Logo TB (menor) e, abaixo, a frase em caixa alta ocupando a largura toda numa linha */}
-        <div className="mt-10 md:mt-14 lg:mt-16">
-          <Reveal onView={false} y={0} delay={0.15}>
-            <Image
-              src={images.mark.src}
-              alt="TB"
-              width={images.mark.width}
-              height={images.mark.height}
-              priority
-              className="h-9 w-auto md:h-12 xl:h-14"
-            />
-          </Reveal>
-          <h1
-            id="hero-title"
-            className="mt-5 text-[5.8vw] leading-[0.95] font-medium tracking-[-0.035em] whitespace-nowrap uppercase md:mt-7 xl:text-[min(6vw,6.5rem)]"
-          >
-            <span className="sr-only">{name} — </span>
-            <RevealText lines={[renderLine(hero.title)]} delay={0.2} />
-          </h1>
-        </div>
+      </div>
+
+      {/*
+        Logo TB (menor) e, abaixo, a frase em caixa alta de ponta a ponta numa linha.
+        O tamanho da letra acompanha a largura disponível (unidade cqw), então a
+        frase sempre preenche a linha sem estourar.
+      */}
+      <div className="@container mx-auto mt-10 max-w-[1680px] px-3 md:mt-14 md:px-4 lg:mt-16">
+        <Reveal onView={false} y={0} delay={0.15}>
+          <Image
+            src={images.mark.src}
+            alt="TB"
+            width={images.mark.width}
+            height={images.mark.height}
+            priority
+            className="h-9 w-auto md:h-12 xl:h-14"
+          />
+        </Reveal>
+        <h1
+          id="hero-title"
+          className="mt-4 text-[calc(100cqw/14.6)] leading-[0.86] font-medium tracking-[-0.05em] whitespace-nowrap uppercase md:mt-6"
+        >
+          <span className="sr-only">{name} — </span>
+          <RevealText lines={[renderLine(hero.title)]} delay={0.2} />
+        </h1>
       </div>
 
       {/* Parede animada com todos os projetos */}
@@ -74,7 +79,7 @@ export default function Hero() {
         onView={false}
         y={0}
         delay={0.45}
-        className="mt-10 h-[40svh] min-h-[280px] md:mt-14 md:h-[min(60svh,560px)] md:min-h-[340px]"
+        className="mt-3 h-[40svh] min-h-[280px] md:mt-4 md:h-[min(60svh,560px)] md:min-h-[340px]"
       >
         <GridMotion projects={projects} rows={2} angle={0} />
       </Reveal>
