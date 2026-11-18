@@ -77,7 +77,7 @@ export const siteConfig = {
     title: "Fora do briefing.",
     intro: "Dois perfis autorais no Instagram. Passa lá, sobe lá.",
     items: [
-      { id: "passa-la", poster: ["Passa", "Lá"], handle: "", tone: "accent" },
+      { id: "passa-la", poster: ["Passa", "Lá"], handle: "passa_l4", tone: "accent" },
       { id: "sobe-la", poster: ["Sobe", "Lá"], handle: "sobe.l4", tone: "ink" },
     ] as { id: string; poster: [string, string]; handle: string; tone: "accent" | "ink" }[],
   },
