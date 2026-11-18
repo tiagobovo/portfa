@@ -47,21 +47,21 @@ export default function Hero() {
           </div>
         </Reveal>
 
-        {/* Logo TB + frase em caixa alta, numa linha (quebra só em telas pequenas) */}
-        <div className="mt-10 flex items-center gap-[0.45em] text-[clamp(1.6rem,5.3vw,5.6rem)] md:text-[4.7vw] xl:text-[clamp(3rem,5.2vw,5.6rem)] md:mt-14 lg:mt-16">
-          <Reveal onView={false} y={0} delay={0.15} className="shrink-0">
+        {/* Logo TB (menor) e, abaixo, a frase em caixa alta ocupando a largura toda numa linha */}
+        <div className="mt-10 md:mt-14 lg:mt-16">
+          <Reveal onView={false} y={0} delay={0.15}>
             <Image
               src={images.mark.src}
               alt="TB"
               width={images.mark.width}
               height={images.mark.height}
               priority
-              className="h-[1.6em] w-auto md:h-[1.15em]"
+              className="h-9 w-auto md:h-12 xl:h-14"
             />
           </Reveal>
           <h1
             id="hero-title"
-            className="min-w-0 leading-[0.95] font-medium tracking-[-0.035em] uppercase md:whitespace-nowrap"
+            className="mt-5 text-[5.8vw] leading-[0.95] font-medium tracking-[-0.035em] whitespace-nowrap uppercase md:mt-7 xl:text-[min(6vw,6.5rem)]"
           >
             <span className="sr-only">{name} — </span>
             <RevealText lines={[renderLine(hero.title)]} delay={0.2} />
