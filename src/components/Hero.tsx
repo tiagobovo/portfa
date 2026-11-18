@@ -55,8 +55,8 @@ export default function Hero() {
         O tamanho da letra acompanha a largura disponível (unidade cqw), então a
         frase sempre preenche a linha sem estourar.
       */}
-      <div className="@container mx-auto mt-10 max-w-[1680px] px-3 md:mt-14 md:px-4 lg:mt-16">
-        <Reveal onView={false} y={0} delay={0.15}>
+      <div className="@container mt-10 px-[2px] md:mt-14 lg:mt-16">
+        <Reveal onView={false} y={0} delay={0.15} className="pl-3 md:pl-4">
           {/* Logo TB com o texto girando ao redor */}
           <CircularText
             text={hero.ringText}
@@ -81,7 +81,7 @@ export default function Hero() {
         </Reveal>
         <h1
           id="hero-title"
-          className="mt-4 text-[calc(100cqw/14.6)] leading-[0.86] font-medium tracking-[-0.05em] whitespace-nowrap uppercase md:mt-6"
+          className="mt-4 text-[calc(100cqw/14.0)] leading-[0.86] font-medium tracking-[-0.065em] whitespace-nowrap uppercase md:mt-6"
         >
           <span className="sr-only">{name} — </span>
           <RevealText lines={[renderLine(hero.title)]} delay={0.2} />
