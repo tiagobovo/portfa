@@ -81,23 +81,6 @@ export default function Contact() {
               </a>
             </div>
 
-            <div>
-              <p className="eyebrow text-background/55">Telefone</p>
-              <div className="mt-3 flex flex-wrap items-center gap-x-6 gap-y-3">
-                <a href={contact.phone.href} className="text-2xl font-medium tracking-tight md:text-[1.75rem]">
-                  <span className="link-underline">{contact.phone.display}</span>
-                </a>
-                <a
-                  href={contact.phone.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-1.5 rounded-full border border-background/30 px-4 py-2 text-sm transition-colors duration-300 hover:border-background hover:bg-background hover:text-foreground"
-                >
-                  WhatsApp
-                  <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </a>
-              </div>
-            </div>
 
             {socials.length > 0 && (
             <div>

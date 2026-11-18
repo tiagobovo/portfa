@@ -32,16 +32,6 @@ export default function Footer() {
                 E-mail
               </a>
             </li>
-            <li>
-              <a href={siteConfig.contact.phone.href} className="link-underline">
-                {siteConfig.contact.phone.display}
-              </a>
-            </li>
-            <li>
-              <a href={siteConfig.contact.phone.whatsapp} target="_blank" rel="noopener noreferrer" className="link-underline">
-                WhatsApp
-              </a>
-            </li>
             {siteConfig.socials.map((s) => (
               <li key={s.label}>
                 <a href={s.href} target="_blank" rel="noopener noreferrer" className="link-underline">

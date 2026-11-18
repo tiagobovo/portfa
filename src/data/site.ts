@@ -132,11 +132,6 @@ export const siteConfig = {
     heading: "Vamos criar algo incrível juntos?",
     text: "Conte sobre seu projeto, ideia ou desafio.",
     email: "tiagobbovo@gmail.com",
-    phone: {
-      display: "(11) 99177-4379",
-      href: "tel:+5511991774379",
-      whatsapp: "https://wa.me/5511991774379",
-    },
     /**
      * Endpoint para envio do formulário (ex.: Formspree, Getform, Basin ou
      * uma API própria). Recebe um POST em JSON com { name, email, subject, message }.
