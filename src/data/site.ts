@@ -53,6 +53,8 @@ export const siteConfig = {
     eyebrow: "Portfólio",
     /** Frase ao lado do logo TB na abertura (exibida em caixa alta). */
     title: "Creative Art Director & Design",
+    /** Texto girando ao redor do logo TB. */
+    ringText: "TB*CREATIVE ART DIRECTOR*&*DESIGN*",
     intro:
       "Transformando ideias em experiências visuais, marcas e projetos que conectam criatividade, estratégia e design.",
     cta: { label: "Explorar projetos", href: "/#projects" },

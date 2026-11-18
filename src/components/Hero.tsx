@@ -7,6 +7,7 @@ import { ArrowDown, ArrowRight } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import { Reveal, RevealText } from "./AnimationWrapper";
 import GridMotion from "./GridMotion";
+import CircularText from "./CircularText";
 import { projects } from "@/data/projects";
 
 /** Destaca o caractere "&" com a fonte serifada itálica. */
@@ -56,14 +57,27 @@ export default function Hero() {
       */}
       <div className="@container mx-auto mt-10 max-w-[1680px] px-3 md:mt-14 md:px-4 lg:mt-16">
         <Reveal onView={false} y={0} delay={0.15}>
-          <Image
-            src={images.mark.src}
-            alt="TB"
-            width={images.mark.width}
-            height={images.mark.height}
-            priority
-            className="h-9 w-auto md:h-12 xl:h-14"
-          />
+          {/* Logo TB com o texto girando ao redor */}
+          <CircularText
+            text={hero.ringText}
+            label={hero.ringText.replace(/\*/g, " ")}
+            spinDuration={20}
+            onHover="speedUp"
+            hoverTilt={15}
+            startAngle={25}
+            fontScale={0.095}
+            fontWeight={900}
+            className="size-[136px] md:size-[176px] xl:size-[200px]"
+          >
+            <Image
+              src={images.mark.src}
+              alt="TB"
+              width={images.mark.width}
+              height={images.mark.height}
+              priority
+              className="h-auto w-[40%]"
+            />
+          </CircularText>
         </Reveal>
         <h1
           id="hero-title"
