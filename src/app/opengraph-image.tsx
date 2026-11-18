@@ -26,9 +26,9 @@ export default function OpengraphImage() {
           <div style={{ width: 16, height: 16, borderRadius: 999, background: theme.accent }} />
           {siteConfig.name}
         </div>
-        <div style={{ display: "flex", flexDirection: "column", fontSize: 128, lineHeight: 0.9, letterSpacing: -6 }}>
-          <span>Creative Direction</span>
-          <span style={{ color: theme.accent }}>& Design</span>
+        <div style={{ display: "flex", flexDirection: "column", fontSize: 104, lineHeight: 0.95, letterSpacing: -4 }}>
+          <span>CREATIVE ART DIRECTOR</span>
+          <span style={{ color: theme.accent }}>& DESIGN</span>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", fontSize: 24, color: theme.muted }}>
           <span>{siteConfig.role}</span>

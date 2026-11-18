@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import HashLink from "./HashLink";
+import { images } from "@/data/images";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import { Reveal, RevealText } from "./AnimationWrapper";
@@ -45,13 +47,24 @@ export default function Hero() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid grid-cols-12 gap-x-5 gap-y-10 md:mt-14 lg:mt-16">
+        {/* Logo TB + frase em caixa alta, numa linha (quebra só em telas pequenas) */}
+        <div className="mt-10 flex items-center gap-[0.45em] text-[clamp(1.6rem,5.3vw,5.6rem)] md:text-[4.7vw] xl:text-[clamp(3rem,5.2vw,5.6rem)] md:mt-14 lg:mt-16">
+          <Reveal onView={false} y={0} delay={0.15} className="shrink-0">
+            <Image
+              src={images.mark.src}
+              alt="TB"
+              width={images.mark.width}
+              height={images.mark.height}
+              priority
+              className="h-[1.6em] w-auto md:h-[1.15em]"
+            />
+          </Reveal>
           <h1
             id="hero-title"
-            className="col-span-12 text-[clamp(3.4rem,12.5vw,11.5rem)] leading-[0.86] font-medium tracking-[-0.055em]"
+            className="min-w-0 leading-[0.95] font-medium tracking-[-0.035em] uppercase md:whitespace-nowrap"
           >
             <span className="sr-only">{name} — </span>
-            <RevealText lines={hero.titleLines.map(renderLine)} delay={0.2} />
+            <RevealText lines={[renderLine(hero.title)]} delay={0.2} />
           </h1>
         </div>
       </div>

@@ -125,4 +125,6 @@ export function projectAssets(
 
 export const images = {
   logo: { src: "/images/brand/logo.png", width: 400, height: 149 },
+  /** Apenas o símbolo TB (recortado do logo). */
+  mark: { src: "/images/brand/tb.png", width: 137, height: 118 },
 } as const;
