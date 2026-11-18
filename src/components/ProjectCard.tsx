@@ -58,7 +58,7 @@ export default function ProjectCard({ project, index, aspect = "aspect-[4/3]", s
           </div>
         </div>
 
-        <div className="mt-4 flex items-start justify-between gap-6 md:mt-5">
+        <div className="mt-3 flex items-start justify-between gap-6 md:mt-4">
           <div className="flex items-baseline gap-4">
             <span className="text-xs text-muted tabular-nums">{number}</span>
             <div>

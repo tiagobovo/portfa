@@ -37,7 +37,7 @@ export default function ProjectGrid() {
         </header>
 
         {/* Quadrados, dois por linha */}
-        <div className="mt-14 grid grid-cols-1 gap-x-5 gap-y-14 sm:grid-cols-2 md:mt-20 md:gap-x-8 md:gap-y-20">
+        <div className="mt-14 grid grid-cols-1 gap-x-2 gap-y-8 sm:grid-cols-2 md:mt-20 md:gap-x-3 md:gap-y-10">
           {projects.map((project, i) => (
             <RevealCard key={project.slug} delay={(i % 2) * 0.12}>
               <ProjectCard project={project} index={i} aspect="aspect-square" sizes="(min-width: 640px) 50vw, 100vw" />
