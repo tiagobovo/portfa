@@ -60,6 +60,8 @@ export const siteConfig = {
   projectsSection: {
     eyebrow: "Trabalhos selecionados",
     title: "Projetos",
+    /** Texto da fita animada da seção de projetos. */
+    loopText: "TB ✦ Art Director",
     intro:
       "Campanhas, ações e conteúdos para marcas como Claro, Harley-Davidson, TIM, Citroën, Hyundai e Unilever.",
   },

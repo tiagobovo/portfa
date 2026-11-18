@@ -2,6 +2,7 @@ import { projects } from "@/data/projects";
 import { siteConfig } from "@/data/site";
 import ProjectCard from "./ProjectCard";
 import { Reveal, RevealText } from "./AnimationWrapper";
+import TextLoop from "./TextLoop";
 
 /**
  * Layout editorial assimétrico. Cada posição define colunas, deslocamento
@@ -25,19 +26,36 @@ export default function ProjectGrid() {
     <section id="projects" aria-labelledby="projects-title" className="py-24 md:py-36">
       <div className="container-editorial">
         <header className="grid grid-cols-12 gap-x-5 gap-y-6 border-t border-line pt-8">
-          <p className="eyebrow col-span-12 md:col-span-3">{projectsSection.eyebrow}</p>
-          <h2
-            id="projects-title"
-            className="col-span-12 text-[clamp(3rem,9vw,8.5rem)] leading-[0.9] font-medium tracking-[-0.05em] md:col-span-6"
-          >
-            <RevealText onView lines={[projectsSection.title]} />
-          </h2>
-          <Reveal className="col-span-12 self-end md:col-span-3">
+          <div className="col-span-12 md:col-span-6">
+            <p className="eyebrow">{projectsSection.eyebrow}</p>
+            <h2
+              id="projects-title"
+              className="mt-3 text-3xl font-medium tracking-[-0.03em] md:text-4xl"
+            >
+              <RevealText onView lines={[projectsSection.title]} />
+            </h2>
+          </div>
+          <Reveal className="col-span-12 self-end md:col-span-4 md:col-start-9">
             <p className="text-muted text-pretty">{projectsSection.intro}</p>
             <p className="mt-4 text-sm tabular-nums">({String(projects.length).padStart(2, "0")})</p>
           </Reveal>
         </header>
+      </div>
 
+      {/* Fita animada com o nome */}
+      <Reveal y={0} className="mt-12 overflow-hidden py-2 md:mt-16">
+        {/* No celular a fita é ampliada (e cortada nas laterais) para o texto ficar legível */}
+        <TextLoop
+          text={projectsSection.loopText}
+          label={projectsSection.loopText}
+          curviness={70}
+          textColor="#090909"
+          ribbonColor="#ffffff"
+          className="-ml-[40%] w-[180%]! md:ml-0 md:w-full!"
+        />
+      </Reveal>
+
+      <div className="container-editorial">
         <div className="mt-16 grid grid-cols-1 gap-x-5 gap-y-16 md:mt-24 md:grid-cols-12 md:gap-y-24 lg:gap-y-32">
           {projects.map((project, i) => {
             const layout = layouts[i % layouts.length];
