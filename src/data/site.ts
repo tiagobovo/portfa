@@ -55,10 +55,6 @@ export const siteConfig = {
     intro:
       "Transformando ideias em experiências visuais, marcas e projetos que conectam criatividade, estratégia e design.",
     cta: { label: "Explorar projetos", href: "/#projects" },
-    image: {
-      ...images.hero,
-      alt: "Key visual da campanha Acelera 5G Claro com carro de Fórmula 1",
-    },
   },
 
   projectsSection: {

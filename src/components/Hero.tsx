@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import HashLink from "./HashLink";
-import { motion } from "framer-motion";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { siteConfig } from "@/data/site";
-import { EASE, Reveal, RevealImage, RevealText } from "./AnimationWrapper";
+import { Reveal, RevealText } from "./AnimationWrapper";
+import GridMotion from "./GridMotion";
+import { projects } from "@/data/projects";
 
 /** Destaca o caractere "&" com a fonte serifada itálica. */
 function renderLine(line: string) {
@@ -22,7 +22,7 @@ export default function Hero() {
   const { hero, availability, name, role, location } = siteConfig;
 
   return (
-    <section aria-labelledby="hero-title" className="relative pt-[calc(var(--header-height)+2rem)] pb-16 md:pb-24 lg:min-h-svh">
+    <section aria-labelledby="hero-title" className="relative pt-[calc(var(--header-height)+2rem)] pb-16 md:pb-24">
       <div className="container-editorial">
         {/* Linha de metadados */}
         <Reveal onView={false} y={0} delay={0.1}>
@@ -48,35 +48,25 @@ export default function Hero() {
         <div className="mt-10 grid grid-cols-12 gap-x-5 gap-y-10 md:mt-14 lg:mt-16">
           <h1
             id="hero-title"
-            className="col-span-12 text-[clamp(3.4rem,12.5vw,11.5rem)] leading-[0.86] font-medium tracking-[-0.055em] lg:col-span-8"
+            className="col-span-12 text-[clamp(3.4rem,12.5vw,11.5rem)] leading-[0.86] font-medium tracking-[-0.055em]"
           >
             <span className="sr-only">{name} — </span>
             <RevealText lines={hero.titleLines.map(renderLine)} delay={0.2} />
           </h1>
-
-          <RevealImage
-            onView={false}
-            delay={0.35}
-            className="relative col-span-12 aspect-[4/3] overflow-hidden bg-surface sm:aspect-[16/10] lg:col-span-4 lg:aspect-square lg:self-end"
-          >
-            <motion.div
-              className="absolute inset-0"
-              initial={{ scale: 1.15 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 1.6, ease: EASE, delay: 0.35 }}
-            >
-              <Image
-                src={hero.image.src}
-                alt={hero.image.alt}
-                fill
-                priority
-                sizes="(min-width: 1024px) 33vw, 100vw"
-                className="object-cover object-[22%_50%]"
-              />
-            </motion.div>
-          </RevealImage>
         </div>
+      </div>
 
+      {/* Parede animada com todos os projetos */}
+      <Reveal
+        onView={false}
+        y={0}
+        delay={0.45}
+        className="mt-10 h-[40svh] min-h-[280px] md:mt-14 md:h-[min(60svh,560px)] md:min-h-[340px]"
+      >
+        <GridMotion projects={projects} rows={2} angle={0} />
+      </Reveal>
+
+      <div className="container-editorial">
         <div className="mt-12 grid grid-cols-12 items-end gap-x-5 gap-y-8 md:mt-16">
           <Reveal onView={false} delay={0.6} className="col-span-12 md:col-span-7 lg:col-span-5">
             <p className="text-xl leading-snug text-pretty md:text-2xl">{hero.intro}</p>

@@ -125,6 +125,4 @@ export function projectAssets(
 
 export const images = {
   logo: { src: "/images/brand/logo.png", width: 400, height: 149 },
-  /** Imagem de destaque da primeira dobra (home). */
-  hero: { src: "/images/projects/acelera-5g-claro/01.png", width: 1827, height: 1194 },
 } as const;

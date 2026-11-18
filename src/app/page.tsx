@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
 import ProjectGrid from "@/components/ProjectGrid";
-import ProjectsWall from "@/components/ProjectsWall";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import { ScrollToHash } from "@/components/HashLink";
@@ -23,7 +22,6 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <ScrollToHash />
       <Hero />
-      <ProjectsWall />
       <ProjectGrid />
       <About />
       <Contact />
